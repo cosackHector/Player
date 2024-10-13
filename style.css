@@ -1,0 +1,106 @@
+body {
+    margin: 0 auto;
+    background-color: #181818;
+}  
+
+h2 {
+    color: #ffffff;
+}
+
+
+.container {
+    display: flex; 
+    flex-direction: column;
+    min-height: 100vh; 
+}
+
+.app_header {
+    height: 50px;
+    background-color: #242424;
+}
+
+.header_title {
+    color: #f6bd40;
+}
+
+.main {
+    margin: 0 auto;
+    max-width: 1500px;
+}
+
+.container_playlists {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.header_playlists {
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.playlists_header_title {
+    color: #f6bd40;
+}
+
+.playlist {
+    padding: 30px;
+    margin-top: 40px;
+    background-color: #282828;
+}
+
+.header_container {
+    max-width: 540px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.tracks_container {
+    margin-top: 20px;
+}
+
+
+.track {
+    display: flex;
+    padding: 10px;
+}
+
+.footer {
+    margin-top: auto;
+    width: 100%;
+    height: 40px;
+    background-color: #242424;
+}
+
+.container_deleteBtn {
+    display: flex;
+    justify-content: flex-end;
+    
+}
+
+.deletePlaylist_btn {
+    margin-bottom: 20px;
+    height: 40px;
+    background-color: #f9a201;
+    border-radius: 10px;
+}
+
+/* audio::-webkit-media-controls-panel   контейнер плеера
+audio::-webkit-media-controls-mute-button */
+/* audio::-webkit-media-controls-play-button */
+/* audio::-webkit-media-controls-time-remaining-display,
+audio::-webkit-media-controls-current-time-display
+   */
+/* {
+    color: #000;
+    background: #000;
+    border-radius: 0;
+} */
+audio::-webkit-media-controls-volume-slider {
+    -webkit-filter: hue-rotate(195deg) saturate(100);
+}
+audio::-webkit-media-controls-timeline {
+    -webkit-filter: hue-rotate(195deg) saturate(100);
+}
