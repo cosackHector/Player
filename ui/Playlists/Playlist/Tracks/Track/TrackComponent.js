@@ -1,8 +1,8 @@
 import { createElement } from "../../../../../shared/createElement.js";
 
 export function TrackComponent(inputTrack) {
-  const container = createElement("div", ["track"]);
-  const element = createElement('div', ['container_title_track']);
+  const element = createElement("div", ["track"]);
+  const containerTitleElement = createElement('div', ['container_title_track']);
   const trackImg = createElement("img", ["track_img"], {
     src: inputTrack.trackImageUrl,
     width: '50px', height: '50px'
@@ -17,9 +17,9 @@ export function TrackComponent(inputTrack) {
     src: inputTrack.fileUrl,
     controls: true,
   });
-  element.append(trackTitle, trackAudio)
-  container.append(trackImg, element);
 
-  return container;
-}
-;
+  containerTitleElement.append(trackTitle, trackAudio)
+  element.append(trackImg, containerTitleElement);
+
+  return element;
+};

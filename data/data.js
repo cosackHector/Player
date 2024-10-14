@@ -6,6 +6,7 @@ export let  playlists = [
     coverImageUrl: "./assets/images/playlistImg.jpg",
     tracks: [
       {
+        id: 1,
         trackImageUrl: "./assets/images/trackImg.jpg",
         title: "Rap God",
         artistName: "Eminem",
@@ -28,6 +29,7 @@ export let  playlists = [
     coverImageUrl: "./assets/images/playlistImg.jpg",
     tracks: [
       {
+        id: 1,
         trackImageUrl: "./assets/images/trackImg.jpg",
         title: "Rap God",
         artistName: "Eminem",
@@ -35,6 +37,7 @@ export let  playlists = [
         isHot: false,
       },
       {
+        id: 2,
         trackImageUrl: "./assets/images/track2Img.jpg",
         title: "In da club",
         artistName: "50cent",
@@ -49,6 +52,7 @@ export let  playlists = [
     coverImageUrl: "./assets/images/playlistImg.jpg",
     tracks: [
       {
+        id: 1, 
         trackImageUrl: "./assets/images/trackImg.jpg",
         title: "Rap God",
         artistName: "Eminem",
@@ -76,7 +80,7 @@ export const deletePlaylist = (id) => {
   playlists = playlists.filter((pl) => pl.id !== id );
   observers.forEach((observer) => {
     observer();
-  })
+  });
 };
 export const addPlaylist = () => {
   playlists.push({
@@ -85,6 +89,27 @@ export const addPlaylist = () => {
     coverImageUrl: "./assets/images/playlistImg.jpg",
     tracks: []
   });
+  observers.forEach((observer) => {
+    observer();
+  });
+};
+
+export const addTrack = () => {
+  const newTrack = {
+    id: 3,
+    trackImageUrl: "",
+    title: "",
+    artistName: "",
+    fileUrl: "",
+    isHot: false,
+  };
+    tracks.push(newTrack);
+    observers.forEach((observer) => {
+      observer();
+  });
+};
+export const deleteTrack = (id) => {
+  tracks = tracks.filter((track) => track.id !== id);
   observers.forEach((observer) => {
     observer();
   });
