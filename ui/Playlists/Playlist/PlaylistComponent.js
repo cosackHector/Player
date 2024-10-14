@@ -8,7 +8,7 @@ export function PlaylistComponent(inputPlaylist) {
   const element = createElement("div", ["playlist"]);
   element.append(
     createDeletePlaylistButton(inputPlaylist.id),
-    PlaylistHeaderComponent(inputPlaylist.title, inputPlaylist.coverImageUrl),
+    PlaylistHeaderComponent(inputPlaylist.title, inputPlaylist.coverImageUrl, inputPlaylist.tracks),
     TracksComponent(inputPlaylist.tracks));
   return element;
 };

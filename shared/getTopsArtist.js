@@ -9,11 +9,11 @@ export const getTopsArtist = (inputTracksArray) => {
 
     Object.entries(countArtist)
         .sort((a, b) => a[1] - b[1])
-        .slice(0, 3)
         .forEach((artist) => {
             top.push(artist[0])
-        })
-    return top;
+        });
+        const res = top.length > 2 ? top.slice(0, 3) : top.slice(0, 2);
+    return res.join(', ');
 };
 
 function getArtistsNameArray(inputTracksArray) {

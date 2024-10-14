@@ -83,14 +83,12 @@ h2 {
 }
 
 .container_deleteBtn {
+    padding-bottom: 20px;
     display: flex;
     justify-content: flex-end;
-    
 }
 
 .deletePlaylist_btn {
-    margin-bottom: 20px;
     height: 40px;
     background-color: #f9a201;
-    border-radius: 10px;
 }
