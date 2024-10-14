@@ -72,6 +72,7 @@ export let  playlists = [
 ];
 // данные всплывающего окна 
 export const editModeState = {
+  newPlaylistTitle: '',
   isOpen: '',
   isDisable: false,
 };
@@ -112,9 +113,13 @@ export const addTrack = () => {
   emit();
 };
 
-// открытие окна добавления плейлиста
+// открытие и закрытие окна добавления плейлиста
 export const openAddEditMode = () => {
   editModeState.isOpen = open
+  emit()
+};
+export const closedAddEditMode = () => {
+  editModeState.isOpen = '';
   emit()
 };
 
