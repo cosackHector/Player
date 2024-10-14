@@ -78,9 +78,7 @@ const observers = [];
 // functions
 export const deletePlaylist = (id) => {
   playlists = playlists.filter((pl) => pl.id !== id );
-  observers.forEach((observer) => {
-    observer();
-  });
+  emit()
 };
 export const addPlaylist = () => {
   playlists.push({
@@ -89,16 +87,12 @@ export const addPlaylist = () => {
     coverImageUrl: "./assets/images/playlistImg.jpg",
     tracks: []
   });
-  observers.forEach((observer) => {
-    observer();
-  });
+  emit();
 };
 
 export const deleteTrack = (id) => {
   tracks = tracks.filter((track) => track.id !== id);
-  observers.forEach((observer) => {
-    observer();
-  });
+  emit();
 };
 export const addTrack = () => {
   const newTrack = {
@@ -110,13 +104,10 @@ export const addTrack = () => {
     isHot: false,
   };
     tracks.push(newTrack);
-    observers.forEach((observer) => {
-      observer();
-  });
+  emit();
 };
 
-
-
+const emit = () => observers.forEach((observer) => observer());
 export const subscribe = (observer) => {
   observers.push(observer)
 };
