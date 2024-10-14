@@ -1,4 +1,4 @@
-// data
+// пример данных
 export let  playlists = [
   {
     id: 1,
@@ -70,12 +70,17 @@ export let  playlists = [
     ],
   },
 ];
+// данные всплывающего окна 
+export const editModeState = {
+  isOpen: '',
+  isDisable: false,
+};
 
-
-// observers / subscribers / listeners / handlers
+// массив с подписчиками  // observers / subscribers / listeners / handlers
 const observers = []; 
 
 // functions
+// удаление и добавление плейлистов
 export const deletePlaylist = (id) => {
   playlists = playlists.filter((pl) => pl.id !== id );
   emit()
@@ -89,7 +94,7 @@ export const addPlaylist = () => {
   });
   emit();
 };
-
+// удаление и добавление треков
 export const deleteTrack = (id) => {
   tracks = tracks.filter((track) => track.id !== id);
   emit();
@@ -107,7 +112,16 @@ export const addTrack = () => {
   emit();
 };
 
+// открытие окна добавления плейлиста
+export const openAddEditMode = () => {
+  editModeState.isOpen = open
+  emit()
+};
+
+
+// пройти по списку подписчиков и подписаться на всех
 const emit = () => observers.forEach((observer) => observer());
+// функция подписки
 export const subscribe = (observer) => {
   observers.push(observer)
 };

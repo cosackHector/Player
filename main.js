@@ -1,4 +1,4 @@
-import { playlists, subscribe } from "./data/data.js";
+import { editModeState, playlists, subscribe } from "./data/data.js";
 import { AddEditPlaylistComponent } from "./ui/AddEditPlaylist/AddEditPlaylistComponent.js";
 import { HeaderComponent } from "./ui/HeaderComponent.js";
 import { MainComponent } from "./ui/MainComponent.js";
@@ -17,7 +17,7 @@ export function refresh() {
   App.append(
     HeaderComponent(logoUrl, titlePlayer),
     MainComponent(playlists),
-    AddEditPlaylistComponent()
+    AddEditPlaylistComponent(editModeState.isOpen)
   );
 };
 
