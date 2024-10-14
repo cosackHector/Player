@@ -1,6 +1,6 @@
 import { createElement } from "../../shared/createElement.js";
 
-export function HeaderComponent(logoUrl, headerText) {
+export function HeaderPlayerComponent(logoUrl, headerText) {
   const element = createElement("header", ["app_header"]);
   const imageElement = createElement("img", ["header_logo"], { src: logoUrl });
   const titleElement = createElement("span", ["header_title"]);

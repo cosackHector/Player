@@ -1,7 +1,8 @@
 import { editModeState, playlists, subscribe } from "./data/data.js";
 import { AddEditPlaylistComponent } from "./ui/AddEditPlaylist/AddEditPlaylistComponent.js";
-import { HeaderComponent } from "./ui/HeaderPlayer/HeaderComponent.js";
-import { MainComponent } from "./ui/MainPlayer/MainComponent.js";
+import { FooterPlayerComponent } from "./ui/FooterPlayer/FooterPlayerComponent.js";
+import { HeaderPlayerComponent } from "./ui/HeaderPlayer/HeaderPlayerComponent.js";
+import { MainPlayerComponent } from "./ui/MainPlayer/MainPlayerComponent.js";
 
 const App = document.querySelector("#root");
 const logoUrl = "./assets/icons/logotype.png";
@@ -15,12 +16,9 @@ export function refresh() {
   App.innerHTML = ''
   // добавление элементов в дерево
   App.append(
-    HeaderComponent(logoUrl, titlePlayer),
-    MainComponent(playlists),
+    HeaderPlayerComponent(logoUrl, titlePlayer),
+    MainPlayerComponent(playlists),
+    FooterPlayerComponent(),
     editModeState.isOpen && AddEditPlaylistComponent()
   );
 };
-
-
-
-
