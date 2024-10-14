@@ -1,5 +1,4 @@
-import { createElement } from "../../shared/createElement.js";
-import { HeaderPlaylist } from "../HeaderPlaylists/HeaderPlaylist.js";
+import { createElement } from "../../../shared/createElement.js";
 import { PlaylistComponent } from "./Playlist/PlaylistComponent.js";
 
 
@@ -15,7 +14,7 @@ const element = createElement('div', ['container_playlists']);
   // обходим циклом все плейлисты и получаем каждый плейлист на каждом тике
   inputPlaylists.forEach((playlist) => {
     // добавляем плейлист
-    element.append( PlaylistComponent(playlist) )
+    element.append(PlaylistComponent(playlist) )
   });
   return element;
 };

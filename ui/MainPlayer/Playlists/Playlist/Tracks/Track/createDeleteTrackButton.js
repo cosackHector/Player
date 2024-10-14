@@ -1,4 +1,4 @@
-import { deleteTrack } from "../../../../../data/data.js";
+import { deleteTrack } from "../../../../../../data/data.js";
 import { createElement } from "../../../shared/createElement.js";
 
 export function createDeleteTrackButton(id) {

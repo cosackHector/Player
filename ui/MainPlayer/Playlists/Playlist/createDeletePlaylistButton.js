@@ -1,5 +1,5 @@
-import { deletePlaylist } from "../../../data/data.js";
-import { createElement } from "../../../shared/createElement.js";
+import { deletePlaylist } from "../../../../data/data.js";
+import { createElement } from "../../../../shared/createElement.js";
 
 export function createDeletePlaylistButton(id) {
     const element = createElement('div', ['container_deleteBtn']);

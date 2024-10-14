@@ -1,7 +1,7 @@
 import { editModeState, playlists, subscribe } from "./data/data.js";
 import { AddEditPlaylistComponent } from "./ui/AddEditPlaylist/AddEditPlaylistComponent.js";
-import { HeaderComponent } from "./ui/HeaderComponent.js";
-import { MainComponent } from "./ui/MainComponent.js";
+import { HeaderComponent } from "./ui/HeaderPlayer/HeaderComponent.js";
+import { MainComponent } from "./ui/MainPlayer/MainComponent.js";
 
 const App = document.querySelector("#root");
 const logoUrl = "./assets/icons/logotype.png";

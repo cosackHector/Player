@@ -46,29 +46,6 @@ export let  playlists = [
       },
     ],
   },
-  {
-    id: 3,
-    title: "Hip-Hop Hits",
-    coverImageUrl: "./assets/images/playlistImg.jpg",
-    tracks: [
-      {
-        id: 1, 
-        trackImageUrl: "./assets/images/trackImg.jpg",
-        title: "Rap God",
-        artistName: "Eminem",
-        fileUrl: "./music/RapGod.mp3",
-        isHot: false,
-      },
-      {
-        id: 2,
-        trackImageUrl: "./assets/images/track2Img.jpg",
-        title: "In da club",
-        artistName: "50cent",
-        fileUrl: "./music/InDaClub.mp3",
-        isHot: true,
-      },
-    ],
-  },
 ];
 // данные всплывающего окна 
 export const editModeState = {
@@ -133,7 +110,7 @@ export const createNewPlaylistTitle = (title) => {
 };
 
 // пройти по списку подписчиков и подписаться на всех
-const emit = () => observers.forEach((observer) => observer());
+export const emit = () => observers.forEach((observer) => observer());
 // функция подписки
 export const subscribe = (observer) => {
   observers.push(observer)

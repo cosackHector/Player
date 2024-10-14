@@ -39,14 +39,14 @@ h2 {
 }
 
 .header_btnAddPlaylist {
-    
+    background-color: #f6bd40;
 }
 
 /* плейлисты */
 
 .container_playlists {
     margin: 0 auto;
-    max-width: 1000px;
+    max-width: 1300px;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
@@ -54,6 +54,8 @@ h2 {
 }
 
 .playlist {
+    min-width: 570px;
+    min-height: 250px;
     padding: 30px;
     margin-top: 40px;
     background-color: #282828;
@@ -63,6 +65,10 @@ h2 {
     max-width: 540px;
     display: flex;
     justify-content: space-around;
+}
+
+.playlist_header__title {
+
 }
 
 .header_description__top {

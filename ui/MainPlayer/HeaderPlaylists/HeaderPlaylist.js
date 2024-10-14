@@ -1,5 +1,5 @@
-import { addPlaylist, openAddEditMode } from "../../data/data.js";
-import { createElement } from "../../shared/createElement.js"
+import { openAddEditMode } from "../../../data/data.js";
+import { createElement } from "../../../shared/createElement.js"
 
 export const HeaderPlaylist = () => {
     const element = createElement('header', ['header_playlists']);

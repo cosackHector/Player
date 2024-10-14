@@ -1,4 +1,4 @@
-import { createElement } from "../../../../../shared/createElement.js";
+import { createElement } from "../../../../../../shared/createElement.js";
 
 export function TrackComponent(inputTrack) {
   const element = createElement("div", ["track"]);

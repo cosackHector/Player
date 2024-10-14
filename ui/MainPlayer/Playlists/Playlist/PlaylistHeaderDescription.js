@@ -1,5 +1,5 @@
-import { createElement } from "../../../shared/createElement.js";
-import { getTopsArtist } from "../../../shared/getTopsArtist.js";
+import { createElement } from "../../../../shared/createElement.js";
+import { getTopsArtist } from "../../../../shared/getTopsArtist.js";
 
 export const PlaylistHeaderDescription = (titleText, arrayTracks) => {
     const element = createElement('div', ['container_headerPlaylist_description']);
