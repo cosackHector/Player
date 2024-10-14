@@ -4,7 +4,7 @@ import { editModeHeaderElement } from "./editModeHeaderElement.js";
 import { editModeInputsElement } from "./editModeInputsElement.js";
 
 export function AddEditPlaylistComponent () {
-    const element = createElement('dialog', ['dialog'], {});
+    const element = createElement('dialog', ['dialog'], {open});
     element.append(
         editModeHeaderElement(),
         editModeInputsElement(), 

@@ -17,7 +17,7 @@ export function refresh() {
   App.append(
     HeaderComponent(logoUrl, titlePlayer),
     MainComponent(playlists),
-    AddEditPlaylistComponent(editModeState.isOpen)
+    editModeState.isOpen && AddEditPlaylistComponent()
   );
 };
 

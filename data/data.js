@@ -73,7 +73,7 @@ export let  playlists = [
 // данные всплывающего окна 
 export const editModeState = {
   newPlaylistTitle: '',
-  isOpen: '',
+  isOpen: false,
   isDisable: false,
 };
 
@@ -87,12 +87,17 @@ export const deletePlaylist = (id) => {
   emit()
 };
 export const addPlaylist = () => {
+  if(!editModeState.newPlaylistTitle) {
+    return alert('введите название плейлиста');
+  }
   playlists.push({
     id: Date.now(),
-    title: "New Playlist",
+    title: editModeState.newPlaylistTitle,
     coverImageUrl: "./assets/images/playlistImg.jpg",
     tracks: []
   });
+  editModeState.isOpen = !editModeState.isOpen;
+  editModeState.newPlaylistTitle = '';
   emit();
 };
 // удаление и добавление треков
@@ -115,14 +120,17 @@ export const addTrack = () => {
 
 // открытие и закрытие окна добавления плейлиста
 export const openAddEditMode = () => {
-  editModeState.isOpen = open
+  editModeState.isOpen = !editModeState.isOpen
   emit()
 };
 export const closedAddEditMode = () => {
   editModeState.isOpen = '';
   emit()
 };
-
+// обновление заголовка новогго плейлиста
+export const createNewPlaylistTitle = (title) => {
+  editModeState.newPlaylistTitle = title;
+};
 
 // пройти по списку подписчиков и подписаться на всех
 const emit = () => observers.forEach((observer) => observer());
