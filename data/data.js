@@ -136,12 +136,12 @@ export const closedAddEditMode = () => {
   editModeState.isOpen = '';
   emit()
 };
-// обновление заголовка новогго плейлиста
+// обновление заголовка нового плейлиста
 export const createNewPlaylistTitle = (title) => {
   editModeState.newPlaylistTitle = title;
 };
 
-// пройти по списку подписчиков и подписаться на всех
+// уведомление о новой подписке (пройти по списку подписчиков и подписаться на всех)
 export const emit = () => observers.forEach((observer) => observer());
 // функция подписки
 export const subscribe = (observer) => {
