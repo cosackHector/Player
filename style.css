@@ -23,26 +23,34 @@ h2 {
     color: #f6bd40;
 }
 
-.main {
-    margin: 0 auto;
-    max-width: 1500px;
-}
+/* заголовок плейлистов */
 
-.container_playlists {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 20px;
+.header_playlists_title {
+    color: #f6bd40;
+    align-self: center;
 }
 
 .header_playlists {
+    margin: 0 auto;
+    width: 1300px;
     height: 50px;
     display: flex;
     justify-content: space-between;
 }
 
-.playlists_header_title {
-    color: #f6bd40;
+.header_btnAddPlaylist {
+    
+}
+
+/* плейлисты */
+
+.container_playlists {
+    margin: 0 auto;
+    max-width: 1000px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 .playlist {
@@ -85,22 +93,4 @@ h2 {
     height: 40px;
     background-color: #f9a201;
     border-radius: 10px;
-}
-
-/* audio::-webkit-media-controls-panel   контейнер плеера
-audio::-webkit-media-controls-mute-button */
-/* audio::-webkit-media-controls-play-button */
-/* audio::-webkit-media-controls-time-remaining-display,
-audio::-webkit-media-controls-current-time-display
-   */
-/* {
-    color: #000;
-    background: #000;
-    border-radius: 0;
-} */
-audio::-webkit-media-controls-volume-slider {
-    -webkit-filter: hue-rotate(195deg) saturate(100);
-}
-audio::-webkit-media-controls-timeline {
-    -webkit-filter: hue-rotate(195deg) saturate(100);
 }

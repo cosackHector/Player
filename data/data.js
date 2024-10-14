@@ -94,6 +94,12 @@ export const addPlaylist = () => {
   });
 };
 
+export const deleteTrack = (id) => {
+  tracks = tracks.filter((track) => track.id !== id);
+  observers.forEach((observer) => {
+    observer();
+  });
+};
 export const addTrack = () => {
   const newTrack = {
     id: 3,
@@ -108,12 +114,7 @@ export const addTrack = () => {
       observer();
   });
 };
-export const deleteTrack = (id) => {
-  tracks = tracks.filter((track) => track.id !== id);
-  observers.forEach((observer) => {
-    observer();
-  });
-};
+
 
 
 export const subscribe = (observer) => {
