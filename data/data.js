@@ -84,7 +84,6 @@ export const editModeState = {
   newPlaylistTitle: '',
   isOpen: false,
   id: null,
-  btnText: 'Создать'
 };
 
 // массив с подписчиками  // observers / subscribers / listeners / handlers
@@ -140,12 +139,10 @@ export const activateEditMode = (playlistId = null) => {
   editModeState.isOpen = !editModeState.isOpen
   // если передали id плейлиста - режим редактирования
   if(playlistId) {
-    editModeState.btnText = 'Изменить'
     const playlist = playlists.find( (p) => p.id == playlistId);
     editModeState.newPlaylistTitle = playlist.title;
     editModeState.id = playlist.id;
   } else {
-    editModeState.btnText = 'Создать'
     editModeState.newPlaylistTitle = '';
     editModeState.id = null;
   };

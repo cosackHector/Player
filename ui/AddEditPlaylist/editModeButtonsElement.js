@@ -6,7 +6,7 @@ export function editModeButtonsElement () {
     const element = createElement('div', ['container_addEditModeBtn']);
     // создание кнопок
     const cancelPlaylistButtonElement = createElement('button', ['cancelEditModeBtn'], {}, 'Отмена');
-    const addPlaylistButtonElement = createElement('button', ['addEditModeBtn'], {}, editModeState.btnText);
+    const addPlaylistButtonElement = createElement('button', ['addEditModeBtn'], {}, editModeState.id ? 'Изменить' : 'Добавить');
     // добавление затемнения кнопки в случае если нет заголовка
     if(!editModeState.newPlaylistTitle) {
         addPlaylistButtonElement.disabled = true;
