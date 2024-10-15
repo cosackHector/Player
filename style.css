@@ -100,13 +100,18 @@ h2 {
     background-color: #242424;
 }
 
-.container_deleteBtn {
+.container_headerPlaylist_buttons {
     padding-bottom: 20px;
     display: flex;
     justify-content: flex-end;
 }
 
 .deletePlaylist_btn {
+    height: 40px;
+    background-color: #f9a201;
+}
+
+.editPlaylist_btn {
     height: 40px;
     background-color: #f9a201;
 }

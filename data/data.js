@@ -83,30 +83,37 @@ export let  playlists = [
 export const editModeState = {
   newPlaylistTitle: '',
   isOpen: false,
-  isDisable: false,
+  id: null,
+  btnText: 'Создать'
 };
 
 // массив с подписчиками  // observers / subscribers / listeners / handlers
 const observers = []; 
 
 // functions
-// удаление и добавление плейлистов
+// удаление / добавление / редактирование плейлистов
 export const deletePlaylist = (id) => {
   playlists = playlists.filter((pl) => pl.id !== id );
   emit()
 };
-export const addPlaylist = () => {
-  if(!editModeState.newPlaylistTitle) {
-    return alert('введите название плейлиста');
-  }
-  playlists.push({
-    id: Date.now(),
-    title: editModeState.newPlaylistTitle,
-    coverImageUrl: "./assets/images/playlistImg.jpg",
-    tracks: []
-  });
-  editModeState.isOpen = !editModeState.isOpen;
-  editModeState.newPlaylistTitle = '';
+export const createUpdatePlaylist = () => {
+  // режим редактирования плейлиста
+  if(editModeState.id) {
+    const playlist = playlists.find((p) => p.id == editModeState.id);
+    playlist.title = editModeState.newPlaylistTitle;
+    editModeState.isOpen = !editModeState.isOpen;
+    editModeState.newPlaylistTitle = '';
+  } 
+  // режим добавления плейлиста
+  else {
+    playlists.push({
+      id: Date.now(),
+      title: editModeState.newPlaylistTitle,
+      coverImageUrl: "./assets/images/playlistImg.jpg",
+      tracks: []
+    });
+    deActivateEditMode();
+  };
   emit();
 };
 // удаление и добавление треков
@@ -128,17 +135,32 @@ export const addTrack = () => {
 };
 
 // открытие и закрытие окна добавления плейлиста
-export const openAddEditMode = () => {
+export const activateEditMode = (playlistId = null) => {
+  // открыть окно редактирования
   editModeState.isOpen = !editModeState.isOpen
-  emit()
+  // если передали id плейлиста - режим редактирования
+  if(playlistId) {
+    editModeState.btnText = 'Изменить'
+    const playlist = playlists.find( (p) => p.id == playlistId);
+    editModeState.newPlaylistTitle = playlist.title;
+    editModeState.id = playlist.id;
+  } else {
+    editModeState.btnText = 'Создать'
+    editModeState.newPlaylistTitle = '';
+    editModeState.id = null;
+  };
+  emit();
 };
-export const closedAddEditMode = () => {
-  editModeState.isOpen = '';
+export const deActivateEditMode = () => {
+  editModeState.isOpen = !editModeState.isOpen;
+  editModeState.newPlaylistTitle = '';
+  editModeState.id = null;
   emit()
 };
 // обновление заголовка нового плейлиста
 export const createNewPlaylistTitle = (title) => {
   editModeState.newPlaylistTitle = title;
+  emit()
 };
 
 // уведомление о новой подписке (пройти по списку подписчиков и подписаться на всех)
