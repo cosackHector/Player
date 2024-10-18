@@ -79,17 +79,22 @@ export let  playlists = [
     ],
   },
 ];
-// данные всплывающего окна 
+// данные режима редактирования
 export const editModeState = {
   newPlaylistTitle: '',
   isOpen: false,
   id: null,
 };
 
+// ПЕРЕМЕННЫЕ
+
 // массив с подписчиками  // observers / subscribers / listeners / handlers
 const observers = []; 
 
-// functions
+
+
+// ФУНКЦИИ
+
 // удаление / добавление / редактирование плейлистов
 export const deletePlaylist = (id) => {
   playlists = playlists.filter((pl) => pl.id !== id );
@@ -115,25 +120,8 @@ export const createUpdatePlaylist = () => {
   };
   emit();
 };
-// удаление и добавление треков
-export const deleteTrack = (id) => {
-  tracks = tracks.filter((track) => track.id !== id);
-  emit();
-};
-export const addTrack = () => {
-  const newTrack = {
-    id: 3,
-    trackImageUrl: "",
-    title: "",
-    artistName: "",
-    fileUrl: "",
-    isHot: false,
-  };
-    tracks.push(newTrack);
-  emit();
-};
 
-// открытие и закрытие окна добавления плейлиста
+// открытие / закрытие режима редактирования
 export const activateEditMode = (playlistId = null) => {
   // открыть окно редактирования
   editModeState.isOpen = !editModeState.isOpen
@@ -154,7 +142,7 @@ export const deActivateEditMode = () => {
   editModeState.id = null;
   emit()
 };
-// обновление заголовка нового плейлиста
+// обновление названия нового плейлиста
 export const createNewPlaylistTitle = (title) => {
   editModeState.newPlaylistTitle = title;
   emit()
@@ -168,7 +156,23 @@ export const subscribe = (observer) => {
 };
 
 
-
+// удаление и добавление треков --------- невнедренное в ui
+export const deleteTrack = (id) => {
+  tracks = tracks.filter((track) => track.id !== id);
+  emit();
+};
+export const addTrack = () => {
+  const newTrack = {
+    id: 3,
+    trackImageUrl: "",
+    title: "",
+    artistName: "",
+    fileUrl: "",
+    isHot: false,
+  };
+    tracks.push(newTrack);
+  emit();
+};
 
 
 
