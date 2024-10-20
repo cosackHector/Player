@@ -1,8 +1,8 @@
 import { editModeState, playlists, subscribe } from "./data/data.js";
 import { AddEditPlaylistComponent } from "./ui/AddEditPlaylist/AddEditPlaylistComponent.js";
-import { FooterPlayerComponent } from "./ui/FooterPlayer/FooterPlayerComponent.js";
-import { HeaderPlayerComponent } from "./ui/HeaderPlayer/HeaderPlayerComponent.js";
-import { MainPlayerComponent } from "./ui/MainPlayer/MainPlayerComponent.js";
+import { FooterComponent } from "./ui/Footer/FooterComponent.js";
+import { HeaderPlayerComponent } from "./ui/Header/HeaderPlayerComponent.js";
+import { MainPlayerComponent } from "./ui/Main/MainPlayerComponent.js";
 
 const App = document.querySelector("#root");
 const logoUrl = "./assets/icons/logotype.png";
@@ -18,7 +18,7 @@ export function refresh() {
   App.append(
     HeaderPlayerComponent(logoUrl, titlePlayer),
     MainPlayerComponent(playlists),
-    FooterPlayerComponent(),
-    editModeState.isOpen && AddEditPlaylistComponent()
+    FooterComponent(),
+    AddEditPlaylistComponent()
   );
 };

@@ -9,15 +9,15 @@ export let  playlists = [
         id: 1,
         trackImageUrl: "./assets/images/trackImg.jpg",
         title: "Rap God",
-        artistName: "Eminem",
-        fileUrl: "./music/RapGod.mp3",
+        artistName: "Руки вверх",
+        fileUrl: "./music/Sergey_Jukov/Некрасивая.mp3",
         isHot: false,
       },
       {
         id: 2,
         trackImageUrl: "./assets/images/track2Img.jpg",
         title: "In da club",
-        artistName: "50cent",
+        artistName: "Руки вверх",
         fileUrl: "./music/InDaClub.mp3",
         isHot: true,
       },
@@ -25,7 +25,7 @@ export let  playlists = [
         id: 1,
         trackImageUrl: "./assets/images/trackImg.jpg",
         title: "Rap God",
-        artistName: "Eminem",
+        artistName: "Руки вверх",
         fileUrl: "./music/RapGod.mp3",
         isHot: false,
       },
@@ -33,7 +33,7 @@ export let  playlists = [
         id: 2,
         trackImageUrl: "./assets/images/track2Img.jpg",
         title: "In da club",
-        artistName: "50cent",
+        artistName: "Руки вверх",
         fileUrl: "./music/InDaClub.mp3",
         isHot: true,
       },
@@ -41,7 +41,7 @@ export let  playlists = [
         id: 1,
         trackImageUrl: "./assets/images/trackImg.jpg",
         title: "Rap God",
-        artistName: "Eminem",
+        artistName: "Руки вверх",
         fileUrl: "./music/RapGod.mp3",
         isHot: false,
       },
@@ -49,32 +49,9 @@ export let  playlists = [
         id: 2,
         trackImageUrl: "./assets/images/track2Img.jpg",
         title: "In da club",
-        artistName: "50cent",
+        artistName: "Руки вверх",
         fileUrl: "./music/InDaClub.mp3",
         isHot: true,
-      },
-    ],
-  },
-  {
-    id: 2,
-    title: "Rap Hits 1990s",
-    coverImageUrl: "./assets/images/playlistImg.jpg",
-    tracks: [
-      {
-        id: 1,
-        trackImageUrl: "./assets/images/trackImg.jpg",
-        title: "Rap God",
-        artistName: "Eminem",
-        fileUrl: "./music/RapGod.mp3",
-        isHot: false,
-      },
-      {
-        id: 2,
-        trackImageUrl: "./assets/images/track2Img.jpg",
-        title: "In da club",
-        artistName: "50cent",
-        fileUrl: "./music/InDaClub.mp3",
-        isHot: false,
       },
     ],
   },
@@ -85,16 +62,18 @@ export const editModeState = {
   isOpen: false,
   id: null,
 };
+// данные для синхронизации плееров
+export const syncSrcPlayer = {
+  src: './music/RapGod.mp3'
+};
 
 // ПЕРЕМЕННЫЕ
-
 // массив с подписчиками  // observers / subscribers / listeners / handlers
 const observers = []; 
 
 
 
 // ФУНКЦИИ
-
 // удаление / добавление / редактирование плейлистов
 export const deletePlaylist = (id) => {
   playlists = playlists.filter((pl) => pl.id !== id );
@@ -142,6 +121,7 @@ export const deActivateEditMode = () => {
   editModeState.id = null;
   emit()
 };
+
 // обновление названия нового плейлиста
 export const createNewPlaylistTitle = (title) => {
   editModeState.newPlaylistTitle = title;
@@ -155,8 +135,12 @@ export const subscribe = (observer) => {
   observers.push(observer)
 };
 
-
-// удаление и добавление треков --------- невнедренное в ui
+// НЕ ВНЕДРЕННОЕ В ui
+// синхронизация ссылок на трек
+export const syncUrlTrack = (inputUrl) => {
+  syncSrcPlayer.src = inputUrl;
+};
+// удаление и добавление треков 
 export const deleteTrack = (id) => {
   tracks = tracks.filter((track) => track.id !== id);
   emit();
