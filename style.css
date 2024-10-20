@@ -13,6 +13,7 @@ h2 {
     min-height: 100vh; 
 }
 
+/* Шапка приложения */
 .app_header {
     min-width: 100vh;
     height: 50px;
@@ -23,13 +24,7 @@ h2 {
     color: #f6bd40;
 }
 
-/* заголовок плейлистов */
-
-.header_playlists_title {
-    color: #f6bd40;
-    align-self: center;
-}
-
+/* Заголовок плейлистов */
 .header_playlists {
     margin: 0 auto;
     width: 80vh;
@@ -38,12 +33,16 @@ h2 {
     justify-content: space-between;
 }
 
-.header_btnAddPlaylist {
+.playlists_title {
+    color: #f6bd40;
+    align-self: center;
+}
+
+.addPlaylistBtn {
     background-color: #f6bd40;
 }
 
-/* плейлисты */
-
+/* Плейлисты */
 .container_playlists {
     margin: 0 auto;
     max-width: 1300px;
@@ -52,6 +51,12 @@ h2 {
     justify-content: space-around;
     flex-wrap: wrap;
     gap: 20px;
+}
+
+.header_container {
+    max-width: 540px;
+    display: flex;
+    justify-content: space-around;
 }
 
 .playlist {
@@ -65,20 +70,7 @@ h2 {
     background-color: #282828;
 }
 
-.header_container {
-    max-width: 540px;
-    display: flex;
-    justify-content: space-around;
-}
-
-.playlist_header__title {
-
-}
-
-.header_description__top {
-    color: #ffffff;
-}
-
+/* Треки */
 .tracks_container {
     margin-top: 20px;
     height: 250px;
@@ -96,13 +88,7 @@ h2 {
     padding: 10px;
 }
 
-.footer_container {
-    margin-top: auto;
-    min-width: 100vh;
-    height: 50px;
-    background-color: #242424;
-}
-
+/* Режим редактирования */
 .container_headerPlaylist_buttons {
     padding-bottom: 20px;
     display: flex;
@@ -117,4 +103,12 @@ h2 {
 .editPlaylist_btn {
     height: 40px;
     background-color: #f9a201;
+}
+
+/* Подвал */
+.footer_container {
+    margin-top: auto;
+    min-width: 100vh;
+    height: 50px;
+    background-color: #242424;
 }

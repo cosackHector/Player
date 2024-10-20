@@ -12,4 +12,4 @@ export const FooterPlayer = () => {
     // VolumeComponent());
   return element;
 };
-
+  

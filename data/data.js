@@ -30,7 +30,7 @@ export let  playlists = [
         isHot: false,
       },
       {
-        id: 2,
+        id: 4,
         trackImageUrl: "./assets/images/Track.jpeg",
         title: "Чужие губы",
         artistName: "Руки вверх",
@@ -38,7 +38,7 @@ export let  playlists = [
         isHot: true,
       },
       {
-        id: 1,
+        id: 5,
         trackImageUrl: "./assets/images/Track.jpeg",
         title: "Пропадаешь зря",
         artistName: "Руки вверх",
@@ -46,7 +46,7 @@ export let  playlists = [
         isHot: false,
       },
       {
-        id: 2,
+        id: 6,
         trackImageUrl: "./assets/images/Track.jpeg",
         title: "Она меня целует",
         artistName: "Руки вверх",
@@ -64,7 +64,7 @@ export const editModeState = {
 };
 // данные для синхронизации плееров
 export const syncSrcPlayer = {
-  src: './music/RapGod.mp3'
+  src: './music/Sergey_Jukov/Некрасивая.mp3'
 };
 
 // ПЕРЕМЕННЫЕ
