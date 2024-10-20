@@ -32,7 +32,7 @@ h2 {
 
 .header_playlists {
     margin: 0 auto;
-    width: 1300px;
+    width: 80vh;
     height: 50px;
     display: flex;
     justify-content: space-between;
